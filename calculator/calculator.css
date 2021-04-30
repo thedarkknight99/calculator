@@ -1,0 +1,102 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.calc-container{
+    background: #21252c;
+    height: 72%;
+    width: 24%;
+    min-width: 280px;
+    min-height: 540px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.display{
+    height: 40%;
+    /* background-color: aqua; */
+}
+.switch-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+.switch{
+    padding: 12px;
+    border-radius: 16px;
+    background: #21333d;
+}
+.color{
+    color:#b4a4a5;
+}
+.icon-size{
+    font-size: 8px;
+    padding: 4px;
+}
+.output{
+    color: #b4a5a5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 80%;
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
+.result{
+    font-size: 7vh;
+}
+.operand{
+    color: #e77474;
+}
+.operation{
+    font-size: 28px;
+}
+.keypad-container{
+    height: 60%;
+    background-color: #333333;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    margin-top: 10px;
+    padding: 16px;
+
+}
+.keypad{
+    width: 100%;
+    color: #ffffff;
+    height: 100%;
+    /* border-spacing: 16px; */
+}
+td{
+    /* width: 40px;
+    height: 40px;
+    text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2px;
+}
+.key{
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #21252c;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    border-spacing: 10px;
+}
+.action-keys{
+ color: #00adb5;  
+}
