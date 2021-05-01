@@ -2,6 +2,8 @@ class Calculator{
     constructor(){
         this.numOne = ""
         this.numTwo = ""
+        // this.numArr = []
+        // this.currentNum = ""
         this.result = ""
         this.operation = ""
         this.prevResult = ""
@@ -10,13 +12,16 @@ class Calculator{
         this.result = Number(this.numOne) + Number(this.numTwo)
     }
     subtract(){
-        this.result = this.numOne - this.numTwo
+        this.result = Number(this.numOne) - Number(this.numTwo)
     }
     multiply(){
-
+        this.result = this.numOne * this.numTwo
     }
     divide(){
-
+        this.result = this.numOne / this.numTwo
+    }
+    modulo(){
+        this.result = this.numOne % this.numTwo
     }
     setNumOne (value){
         this.numOne += value
@@ -41,13 +46,20 @@ class Calculator{
         }
         this.numTwo = String(Number(this.numTwo)*-1)
     }
+    undo(forNumOne){
+        if(forNumOne){
+            this.numOne = this.numOne.substring(0,(this.numOne.length-1))
+        }
+        this.numTwo = this.numTwo.substring(0,(this.numTwo.length-1))
+    }
 }
 
 const signObject = {
     ADD : "+",
     SUBTRACT : "-",
     MULTIPLY : "x",
-    DIVIDE : "&#x00F7"
+    DIVIDE : "&#x00F7",
+    MODULO : "%"
 }
 
 const calculator = new Calculator()
@@ -94,6 +106,9 @@ const resultClickHandler = () => {
         case "MULTIPLY":
             calculator.multiply();
             break;
+        case "MODULO":
+            calculator.modulo();
+            break;
         default:
             break;
     }
@@ -106,18 +121,21 @@ const actionkeyClickHandler = (action) => {
     switch (action) {
         case "CLEAR-ALL":
             calculator.clearCalculator() 
-            updateMainDisplay()
-            updateSecondaryDisplay()
             break;
         case "CHANGE-SIGN":
             calculator.changeSign(calculator.operation ? false : true)
-            updateMainDisplay()
-            updateSecondaryDisplay()
             break;
     
         default:
             break;
     }
+    updateMainDisplay()
+    updateSecondaryDisplay()
+}
+const undoClickHandler = () => {
+    calculator.undo(calculator.operation ? false : true)
+    updateMainDisplay()
+    updateSecondaryDisplay()
 }
 
 
